@@ -1,0 +1,33 @@
+Instalar o virtualenv 
+pip install virtualenv
+
+Criar um ambiente
+virtualenv ENV
+
+Ativação do ambiente virtual
+source ENV/bin/activate
+
+Desativar o ambiente
+deactivate
+
+Instalando Django 1.7.4 para Python 2.7
+pip install Django==1.7.4
+
+Criando o projeto 
+django-admin.py startproject connectedIn
+
+Entrar no projeto 
+cd connectedIn
+
+Criar o banco de dados do projeto com Sqlite 3
+python manage.py migrate
+
+Iniciar o projeto
+python manage.py runserver
+
+Criar aplicação
+python manage.py startapp perfis
+
+Resgistrar a app no arquivo settings
+
+arquivo views
