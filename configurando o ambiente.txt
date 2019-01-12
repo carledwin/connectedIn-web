@@ -31,3 +31,48 @@ python manage.py startapp perfis
 Resgistrar a app no arquivo settings
 
 arquivo views
+
+Criar a tabela no banco de dados para o model Perfil
+python manage.py makemigrations
+
+Atualizar o banco com a nova tabela de dados, pois foi criado o model Perfil
+python manage.py migrate
+
+Abrir o shell do Django
+python manage.py shell
+
+Popular o objeto via construtor com nameParam
+perfil = Perfil(name='Carl Edwin', email='carl@email.com', telefone='1234-5678', nome_empresa='Carl Edwin Ti')
+
+Salvar 
+perfil.save()
+
+Consultando um perfil por id no banco via shell
+perfil_encontrado = Perfil.objects.get(id=1)
+
+Alterar
+perfil_encontrado.nome = Carl Edwin
+perfil_alterado.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
