@@ -61,9 +61,15 @@ Variaveis de template
 Template tag permite codigo python no html
 Ex. {% for  %} {% endfor %}
 
+Selecionar um registro por um campo especifico (utilizando '__' para acessar o atributo do objeto)
+convites_feitos Convite.objects.filter(solicitante__id=1)
 
-
-
+consultar perfis convidados via shell do Django
+python manage.py shell
+from perfis.models import Perfil
+perfil = Perfil.objects.get(id=1)
+for convite in perfil.convites_feitos.all():
+    convite.convidado.nome
 
 
 

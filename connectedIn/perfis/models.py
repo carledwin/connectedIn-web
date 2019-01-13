@@ -18,3 +18,14 @@ class Perfil(models.Model):
 	email = models.CharField(max_length=255, null=False)
 	telefone = models.CharField(max_length=15, null=False)
 	nome_empresa = models.CharField(max_length=255, null=False)
+	#convites_feitos
+	#convites_recebidos
+
+	def convidar(self, perfil_convidado):
+		convite = Convite(solicitante=self, convidado=perfil_convidado).save()
+
+#O Django controla related_name sao variaveis passadas para a classe Perfil, 
+# fazendo como se estes atributos existissem nessa classe
+class Convite(models.Model):
+	solicitante = models.ForeignKey(Perfil, related_name='convites_feitos')
+	convidado = models.ForeignKey(Perfil, related_name='convites_recebidos')		

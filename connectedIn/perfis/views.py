@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #from django.http import HttpResponse
 from perfis.models import Perfil
 
@@ -8,6 +8,16 @@ from perfis.models import Perfil
 def view_index(request):
     #return HttpResponse("Bem vindo ao connectedIn")
     return render(request, 'index.html', {'perfis': Perfil.objects.all()})
+
+#palavra chave pass para nao dar erro em um metodo que ainda nao foi implementado 
+def view_convidar(request, perfil_id):
+	perfil_a_convidar = Perfil.objects.get(id=perfil_id)
+	perfil_logado = get_perfil_logado(request)
+	perfil_logado.convidar(perfil_a_convidar)
+	return redirect(view_index)
+
+def get_perfil_logado(request):
+	return Perfil.objects.get(id=1)	
 
 def view_perfil(request, perfil_id):
 
