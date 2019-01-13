@@ -7,7 +7,7 @@ from perfis.models import Perfil
 #
 def view_index(request):
     #return HttpResponse("Bem vindo ao connectedIn")
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'perfis': Perfil.objects.all()})
 
 def view_perfil(request, perfil_id):
 

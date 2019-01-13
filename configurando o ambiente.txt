@@ -55,7 +55,11 @@ perfil_encontrado.nome = Carl Edwin
 perfil_alterado.save()
 
 
+Variaveis de template
+{{ variavel_do_dicionario}}
 
+Template tag permite codigo python no html
+Ex. {% for  %} {% endfor %}
 
 
 

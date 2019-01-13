@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # \d+ com um ou mais digitos
     #url(r'^perfis/\d+$', 'perfis.views.view_perfil'),
     # grupo (?P<parm>\d+)
-    url(r'^perfis/(?P<perfil_id>\d+)$', 'perfis.views.view_perfil'),
+    url(r'^$', 'perfis.views.view_index', name='index'),
+    #url(r'^perfis/(?P<perfil_id>\d+)$', 'perfis.views.view_perfil'),
+    url(r'^perfis/(?P<perfil_id>\d+)$', 'perfis.views.view_perfil', name='perfis'),
     
 )
