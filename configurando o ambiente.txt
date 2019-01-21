@@ -71,6 +71,8 @@ perfil = Perfil.objects.get(id=1)
 for convite in perfil.convites_feitos.all():
     convite.convidado.nome
 
+download dos arquivos da pasta static
+http://s3.amazonaws.com/caelum-online-public/django/static.zip
 
 
 
