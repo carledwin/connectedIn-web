@@ -20,6 +20,7 @@ class Perfil(models.Model):
 	nome_empresa = models.CharField(max_length=255, null=False)
 	#convites_feitos
 	#convites_recebidos
+	contatos = models.ManyToManyField('self')
 
 	def convidar(self, perfil_convidado):
 		convite = Convite(solicitante=self, convidado=perfil_convidado).save()
@@ -29,3 +30,11 @@ class Perfil(models.Model):
 class Convite(models.Model):
 	solicitante = models.ForeignKey(Perfil, related_name='convites_feitos')
 	convidado = models.ForeignKey(Perfil, related_name='convites_recebidos')		
+	
+	#self eh o proprio convite que serah removido apos o convite ser aceito
+	#adiciona o solicitante na lista do convidado e ao mesmo tempo
+	# adiciona o convidado a lista do solicitante
+	def aceitar(self):
+		self.convidado.contatos.add(self.solicitante)
+		self.solicitante.contatos.add(self.convidado)
+		self.delete()

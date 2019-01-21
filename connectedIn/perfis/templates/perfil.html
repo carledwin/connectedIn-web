@@ -12,7 +12,16 @@
 				<br>
 				<a href="mailto:{{perfil.email}}">{{perfil.email}}</a>
 			</address>
+
+			{% if ja_eh_contato %}
+				<div class="well well-sm">
+					Vocês estão conectados!
+				</div>
+			{% else %}
 			<a href="{% url 'convidar' perfil.id %}">convidar</a>
+			{% endif %}
+
+			
 		</div>
 	</div>
 {% endblock %}

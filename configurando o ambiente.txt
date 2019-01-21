@@ -91,3 +91,7 @@ Taniel Leves
 >>> print a_convidar.convites_recebidos.all
 >>> print a_convidar.convites_recebidos.count()
 2
+
+Após a inclusão de atributos na classe executar
+python manage.py makemigrations
+python manage.py migrate
