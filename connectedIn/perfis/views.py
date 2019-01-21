@@ -7,7 +7,7 @@ from perfis.models import Perfil
 #
 def view_index(request):
     #return HttpResponse("Bem vindo ao connectedIn")
-    return render(request, 'index.html', {'perfis': Perfil.objects.all()})
+    return render(request, 'index.html', {'perfis': Perfil.objects.all(), 'perfil_logado': get_perfil_logado(request)})
 
 #palavra chave pass para nao dar erro em um metodo que ainda nao foi implementado 
 def view_convidar(request, perfil_id):

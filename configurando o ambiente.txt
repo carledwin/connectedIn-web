@@ -74,17 +74,20 @@ for convite in perfil.convites_feitos.all():
 download dos arquivos da pasta static
 http://s3.amazonaws.com/caelum-online-public/django/static.zip
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
+Criando convites via shell
+python manage.py shell
+>>> from perfis.models import Convite, Perfil
+>>> a_convidar = Perfil.objects.get(id=1)
+>>> print a_convidar
+Perfil object
+>>> print a_convidar.nome
+Carl Edwin
+>>> solicitante = Perfil.objects.get(id=2)
+>>> print solicitante
+Perfil object
+>>> print solicitante.nome
+Taniel Leves
+>>> solicitante.convidar(a_convidar)
+>>> print a_convidar.convites_recebidos.all
+>>> print a_convidar.convites_recebidos.count()
+2
