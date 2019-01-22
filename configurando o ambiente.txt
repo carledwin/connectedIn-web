@@ -95,3 +95,26 @@ Taniel Leves
 Após a inclusão de atributos na classe executar
 python manage.py makemigrations
 python manage.py migrate
+
+Criando a app usuarios
+na pasta do projeto
+python manage.py startapp usuarios
+
+Acrescentar a app no arquivo settings do projeto
+INSTALLED_APPS
+
+Criar o arquivo uls.py dentro da pasta da app usuarios
+
+Registar as urls da app usuarios
+
+Criar o include da urls.py da app usuarios no urls.py principal
+
+Criar uma classBasedView é uma view baseada em uma classe
+
+Criar uma pasta template dentro da pasta da app usuarios
+Criar uma pasta template
+Criar um arquivo usuario_base.html
+
+Erro de forbidden 403 csrf
+Cross-site request forgery- Falsificação de solicitação entre sites
+incluir {% csrf_token %}
