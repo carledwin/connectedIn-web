@@ -120,3 +120,7 @@ Cross-site request forgery- Falsificação de solicitação entre sites
 incluir {% csrf_token %}
 
 apagar o arquivo do banco de dados sqllite.db
+
+Inclusão de URLs para serem desconsideradas pelo filtro de autenticação
+
+Configurar o decorator @login_required para quem tiver esta anotação e não estiver logado será redirecionado para a pagina de login
