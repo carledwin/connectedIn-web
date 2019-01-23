@@ -118,3 +118,5 @@ Criar um arquivo usuario_base.html
 Erro de forbidden 403 csrf
 Cross-site request forgery- Falsificação de solicitação entre sites
 incluir {% csrf_token %}
+
+apagar o arquivo do banco de dados sqllite.db

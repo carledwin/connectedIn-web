@@ -6,5 +6,5 @@ Utilizando RegistrarUsuarioView.as_view()
 """
 
 urlpatterns = patterns('',
-    url(r'^registrar/$', RegistrarUsuarioView.as_view(), name='registrar')
+    url(r'^registrar/$', RegistrarUsuarioView.as_view(), name='registrar'),
 )
